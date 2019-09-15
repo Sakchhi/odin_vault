@@ -1,6 +1,8 @@
-import argparse, os
-from file_processing import read_file
+import argparse
+import os
+
 from directory_processing import process_directory
+from file_processing import read_file
 
 
 # TODO: Is Exception the best way forward??
