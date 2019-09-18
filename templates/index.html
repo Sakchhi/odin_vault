@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>SVHN Model as a Flask API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Odin API</h1>
+    <form action="/output" method="post" enctype="multipart/form-data">
+         <input type="file" name="image" value="Upload">
+         <input type="submit" value="Decode"> {% if label %} {{ label }} {% endif %}
+    </form>
+  </body>
+</html>

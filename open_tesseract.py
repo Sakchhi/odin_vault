@@ -27,7 +27,7 @@ def processing(process_args):
         raise OSError
     if os.path.isfile(process_args):
         if process_args.split('.')[-1] in ['jpg', 'png', 'tiff', 'gif']:
-            read_file(process_args)
+            return read_file(process_args)
         else:
             raise Exception('Not an image file')
     else:
