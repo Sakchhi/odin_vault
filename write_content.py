@@ -1,6 +1,6 @@
 import os
 
-OUTPUT_DIRECTORY = '/home/sirius/outputs'
+OUTPUT_DIRECTORY = os.path.join(os.path.expanduser("~"), "outputs")
 
 if not os.path.exists(OUTPUT_DIRECTORY):
     os.mkdir(OUTPUT_DIRECTORY)
