@@ -24,9 +24,11 @@ def processing(process_args):
     """
     print(process_args)
     if not os.path.exists(process_args):
+        print("File doesn't exist")
         raise OSError
     if os.path.isfile(process_args):
         if process_args.split('.')[-1] in ['jpg', 'png', 'tiff', 'gif']:
+            print("File is image file")
             return read_file(process_args)
         else:
             raise Exception('Not an image file')

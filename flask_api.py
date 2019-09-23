@@ -16,6 +16,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route("/")
 @app.route("/index")
 def index():
+    print("Loaded index page")
     return flask.render_template('index.html')
 
 
@@ -25,10 +26,13 @@ def make_prediction():
         file = request.files['image']
     if not file:
         return render_template('index.html', label="No file")
+    print(UPLOAD_FOLDER)
+    print(os.path.isfile(os.path.join(app.config['UPLOAD_FOLDER'], 'test.png')))
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
 
     return processing(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    port = int(os.environ.get("PORT", 33507))
+    app.run(host='0.0.0.0', port=port, debug=True)
