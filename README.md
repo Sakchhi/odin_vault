@@ -10,3 +10,6 @@ Future plans:
 * Upload image from browser to be processed using a Flask API
 * Android app maybe
 * Analysis on extracted content
+
+
+App is now hosted at odin-vault.heroku-app.com
